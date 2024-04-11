@@ -1,0 +1,677 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <!-- Meta Tags -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="keywords" content="Site keywords here">
+		<meta name="description" content="">
+		<meta name='copyright' content=''>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<!-- Title -->
+        <title>MindMate</title>
+		{% load static %}
+        
+		<!-- Favicon -->
+        <link rel="icon" href="{% static '/img/favicon.png' %}">
+		
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+
+		<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="{% static 'css/bootstrap1.min.css' %}">
+<!-- Nice Select CSS -->
+<link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+<!-- Font Awesome CSS -->
+<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+<!-- icofont CSS -->
+<link rel="stylesheet" href="{% static 'css/icofont.css' %}">
+<!-- Slicknav -->
+<link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}">
+<!-- Owl Carousel CSS -->
+<link rel="stylesheet" href="{% static 'css/owl-carousel.css' %}">
+<!-- Datepicker CSS -->
+<link rel="stylesheet" href="{% static 'css/datepicker.css' %}">
+<!-- Animate CSS -->
+<link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+<!-- Magnific Popup CSS -->
+<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+<!-- Medipro CSS -->
+<link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stress Level Assessment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+   
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .container1 {
+            max-width: 800px;
+            margin: 245px auto;
+            margin-top: 30px;
+            margin-bottom: ;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            display: none;
+            margin-bottom: 20px;
+        }
+
+        .question.active {
+            display: block;
+
+        }
+
+        .question label {
+            font-weight: normal;
+            color: black;
+            font-size: 20px;
+        }
+
+
+        #result {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .low {
+            background-color: #bdecb6;
+        }
+
+        .medium {
+            background-color: #f8edaa;
+        }
+
+        .high {
+            background-color: #f4adb5;
+        }
+    </style>
+
+		
+    </head>
+    <body>
+        <!-- Preloader -->
+        <div class="preloader">
+            <div class="loader">
+                <div class="loader-outter"></div>
+                <div class="loader-inner"></div>
+
+                <div class="indicator"> 
+                    <svg width="16px" height="12px">
+                        <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                        <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <!-- End Preloader -->
+       {% include 'nav1.html' %}
+       <h2 style="text-align: center; padding-top: 50px;padding-bottom: 10px;">Stress Level Assessment</h2>
+
+       <div class="container1">
+        
+        <form id="assessmentForm">
+            <div class="question active">
+                <label for="q1">You feel rested</label><br>
+                <input type="radio" name="q1" value="1"> Almost<br>
+                <input type="radio" name="q1" value="2"> Sometimes <br>
+                <input type="radio" name="q1" value="3"> Often<br>
+                <input type="radio" name="q1" value="4"> Usually<br>
+            </div>
+            <div class="question">
+                <label for="q2">You feel that too many demands are being made on you</label><br>
+                <input type="radio" name="q2" value="1"> Almost<br>
+                <input type="radio" name="q2" value="2"> Sometimes <br>
+                <input type="radio" name="q2" value="3"> Often<br>
+                <input type="radio" name="q2" value="4"> Usually<br>
+            </div>
+            <div class="question">
+                <label for="q3">You are irritable or grouchy</label><br>
+                <input type="radio" name="q3" value="1"> Almost<br>
+                <input type="radio" name="q3" value="2"> Sometimes <br>
+                <input type="radio" name="q3" value="3"> Often<br>
+                <input type="radio" name="q3" value="4"> Usually<br>
+            </div>
+            <div class="question">
+                <label for="q4">You have too many things to do</label><br>
+                <input type="radio" name="q4" value="1"> Almost<br>
+                <input type="radio" name="q4" value="2"> Sometimes <br>
+                <input type="radio" name="q4" value="3"> Often<br>
+                <input type="radio" name="q4" value="4"> Usually<br>
+            </div>
+            <div class="question">
+                <label for="q5">You feel lonely or isolated</label><br>
+                <input type="radio" name="q5" value="1"> Almost<br>
+                <input type="radio" name="q5" value="2"> Sometimes <br>
+                <input type="radio" name="q5" value="3"> Often<br>
+                <input type="radio" name="q5" value="4"> Usually<br>
+            </div>
+            <div class="question">
+                <label for="q6">You find yourself in situations of conflict</label><br>
+                <input type="radio" name="q6" value="1"> Almost<br>
+                <input type="radio" name="q6" value="2"> Sometimes <br>
+                <input type="radio" name="q6" value="3"> Often<br>
+                <input type="radio" name="q6" value="4"> Usually<br>
+            </div>
+            <div class="question">
+                <label for="q7">You feel you're doing things you really like</label><br>
+                <input type="radio" name="q7" value="1"> Almost<br>
+                <input type="radio" name="q7" value="2"> Sometimes <br>
+                <input type="radio" name="q7" value="3"> Often<br>
+                <input type="radio" name="q7" value="4"> Usually<br>
+            </div>
+            <div class="question">
+                <label for="q8">You feel tired</label><br>
+                <input type="radio" name="q8" value="1"> Almost<br>
+                <input type="radio" name="q8" value="2"> Sometimes <br>
+                <input type="radio" name="q8" value="3"> Often<br>
+                <input type="radio" name="q8" value="4"> Usually<br>
+            </div>
+            <div class="question">
+                <label for="q9">You fear you may not manage to attain your goals</label><br>
+                <input type="radio" name="q9" value="1"> Almost<br>
+                <input type="radio" name="q9" value="2"> Sometimes <br>
+                <input type="radio" name="q9" value="3"> Often<br>
+                <input type="radio" name="q9" value="4"> Usually<br>
+            </div>
+            <div class="question">
+                <label for="q10">You feel calm</label><br>
+                <input type="radio" name="q10" value="1"> Almost<br>
+                <input type="radio" name="q10" value="2"> Sometimes <br>
+                <input type="radio" name="q10" value="3"> Often<br>
+                <input type="radio" name="q10" value="4"> Usually<br>
+            </div>
+            <div class="question">
+                <label for="q11">You have too many decisions to make</label><br>
+                <input type="radio" name="q11" value="1"> Almost<br>
+                <input type="radio" name="q11" value="2"> Sometimes <br>
+                <input type="radio" name="q11" value="3"> Often<br>
+                <input type="radio" name="q11" value="4"> Usually<br>
+            </div>
+            <div class="question">
+                <label for="q12">You feel frustrated</label><br>
+                <input type="radio" name="q12" value="1"> Almost<br>
+                <input type="radio" name="q12" value="2"> Sometimes <br>
+                <input type="radio" name="q12" value="3"> Often<br>
+                <input type="radio" name="q12" value="4"> Usually<br>
+            </div>
+            <div class="question">
+                <label for="q13">You are full of energy</label><br>
+                <input type="radio" name="q13" value="1"> Almost<br>
+                <input type="radio" name="q13" value="2"> Sometimes <br>
+                <input type="radio" name="q13" value="3"> Often<br>
+                <input type="radio" name="q13" value="4"> Usually<br>
+            </div>
+            <div class="question">
+                <label for="q14">You feel tense</label><br>
+                <input type="radio" name="q14" value="1"> Almost<br>
+                <input type="radio" name="q14" value="2"> Sometimes <br>
+                <input type="radio" name="q14" value="3"> Often<br>
+                <input type="radio" name="q14" value="4"> Usually<br>
+            </div>
+            <div class="question">
+                <label for="q15">Your problems seem to be piling up</label><br>
+                <input type="radio" name="q15" value="1"> Almost<br>
+                <input type="radio" name="q15" value="2"> Sometimes <br>
+                <input type="radio" name="q15" value="3"> Often<br>
+                <input type="radio" name="q15" value="4"> Usually<br>
+            </div>
+            <div class="question">
+                <label for="q16">You feel you're in a hurry</label><br>
+                <input type="radio" name="q16" value="1"> Almost<br>
+                <input type="radio" name="q16" value="2"> Sometimes <br>
+                <input type="radio" name="q16" value="3"> Often<br>
+                <input type="radio" name="q16" value="4"> Usually<br>
+            </div>
+            <div class="question">
+                <label for="q17">You feel safe and protected</label><br>
+                <input type="radio" name="q17" value="1"> Almost<br>
+                <input type="radio" name="q17" value="2"> Sometimes <br>
+                <input type="radio" name="q17" value="3"> Often<br>
+                <input type="radio" name="q17" value="4"> Usually<br>
+            </div>
+            <div class="question">
+                <label for="q18">You have many worries</label><br>
+                <input type="radio" name="q18" value="1"> Almost<br>
+                <input type="radio" name="q18" value="2"> Sometimes <br>
+                <input type="radio" name="q18" value="3"> Often<br>
+                <input type="radio" name="q18" value="4"> Usually<br>
+            </div>
+            <div class="question">
+                <label for="q19">You are under pressure from Other people</label><br>
+                <input type="radio" name="q19" value="1"> Almost<br>
+                <input type="radio" name="q19" value="2"> Sometimes <br>
+                <input type="radio" name="q19" value="3"> Often<br>
+                <input type="radio" name="q19" value="4"> Usually<br>
+            </div>
+            <div class="question">
+                <label for="q20">You feel discouraged</label><br>
+                <input type="radio" name="q20" value="1"> Almost<br>
+                <input type="radio" name="q20" value="2"> Sometimes <br>
+                <input type="radio" name="q20" value="3"> Often<br>
+                <input type="radio" name="q20" value="4"> Usually<br>
+            </div>
+            <div class="question">
+                <label for="q21">You enjoy yourself</label><br>
+                <input type="radio" name="q21" value="1"> Almost<br>
+                <input type="radio" name="q21" value="2"> Sometimes <br>
+                <input type="radio" name="q21" value="3"> Often<br>
+                <input type="radio" name="q21" value="4"> Usually<br>
+            </div>
+            <div class="question">
+                <label for="q22">You are afraid for the future</label><br>
+                <input type="radio" name="q22" value="1"> Almost<br>
+                <input type="radio" name="q22" value="2"> Sometimes <br>
+                <input type="radio" name="q22" value="3"> Often<br>
+                <input type="radio" name="q22" value="4"> Usually<br>
+            </div>
+            <div class="question">
+                <label for="q23">You feel you're doing things because you have to not because you want to</label><br>
+                <input type="radio" name="q23" value="1"> Almost<br>
+                <input type="radio" name="q23" value="2"> Sometimes <br>
+                <input type="radio" name="q23" value="3"> Often<br>
+                <input type="radio" name="q23" value="4"> Usually<br>
+            </div>
+            <div class="question">
+                <label for="q24">You feel criticized or judged</label><br>
+                <input type="radio" name="q24" value="1"> Almost<br>
+                <input type="radio" name="q24" value="2"> Sometimes <br>
+                <input type="radio" name="q24" value="3"> Often<br>
+                <input type="radio" name="q24" value="4"> Usually<br>
+            </div>
+            <div class="question">
+                <label for="q25">You are lighthearted</label><br>
+                <input type="radio" name="q25" value="1"> Almost<br>
+                <input type="radio" name="q25" value="2"> Sometimes <br>
+                <input type="radio" name="q25" value="3"> Often<br>
+                <input type="radio" name="q25" value="4"> Usually<br>
+            </div>
+            <div class="question">
+                <label for="q26">You feel mentally exhausted</label><br>
+                <input type="radio" name="q26" value="1"> Almost<br>
+                <input type="radio" name="q26" value="2"> Sometimes <br>
+                <input type="radio" name="q26" value="3"> Often<br>
+                <input type="radio" name="q26" value="4"> Usually<br>
+            </div>
+            <div class="question">
+                <label for="q27"> You have trouble relaxing</label><br>
+                <input type="radio" name="q27" value="1"> Almost<br>
+                <input type="radio" name="q27" value="2"> Sometimes <br>
+                <input type="radio" name="q27" value="3"> Often<br>
+                <input type="radio" name="q27" value="4"> Usually<br>
+            </div>
+            <div class="question">
+                <label for="q28">You feel loaded down with responsibility</label><br>
+                <input type="radio" name="q28" value="1"> Almost<br>
+                <input type="radio" name="q28" value="2"> Sometimes <br>
+                <input type="radio" name="q28" value="3"> Often<br>
+                <input type="radio" name="q28" value="4"> Usually<br>
+            </div>
+            <div class="question">
+                <label for="q29">You have enough time for yourself</label><br>
+                <input type="radio" name="q29" value="1"> Almost<br>
+                <input type="radio" name="q29" value="2"> Sometimes <br>
+                <input type="radio" name="q29" value="3"> Often<br>
+                <input type="radio" name="q29" value="4"> Usually<br>
+            </div>
+            <div class="question">
+                <label for="q30">You feel under pressure from deadlines</label><br>
+                <input type="radio" name="q30" value="1"> Almost<br>
+                <input type="radio" name="q30" value="2"> Sometimes <br>
+                <input type="radio" name="q30" value="3"> Often<br>
+                <input type="radio" name="q30" value="4"> Usually<br>
+            </div>
+            
+            <button type="button" class="btn btn-primary" onclick="nextQuestion()" style="margin-top: 20px;">Next</button>
+            <button type="button" class="btn btn-primary" onclick="calculateScore()" style="display: none;">Submit</button>
+
+        </form>
+
+        <div id="result"></div>
+        <div id="popup" style="display: none;">
+            <button class="btn" id="chatBtn" onclick="window.location.href='{% url 'aichat' %}'" style="margin: 20px;margin-left: 0px;">Chat with Eva</button>
+            <button class="btn" id="consultBtn" onclick="window.location.href='{% url 'login' %}" style="margin: 20px;">Consult with Doctor</button>
+        </div>
+    </div>
+    
+    
+{% include 'footer.html' %}
+<script>
+    
+    let currentQuestion = 0;
+    function nextQuestion() {
+    const questions = document.querySelectorAll('.question');
+    questions[currentQuestion].classList.remove('active');
+    currentQuestion++;
+    if (currentQuestion < questions.length - 1) {
+        questions[currentQuestion].classList.add('active');
+    } else if (currentQuestion === questions.length - 1) {
+        questions[currentQuestion].classList.add('active');
+        document.querySelector('.btn-primary').style.display = 'none';
+        document.querySelector('.btn-primary:last-of-type').style.display = 'block';
+    }}
+    function calculateScore() {
+    // Initialize total score
+    let score = 0;
+    const answers = document.querySelectorAll('input[type="radio"]:checked');
+    answers.forEach(answer => {
+    score += parseInt(answer.value);
+         });
+
+         let result = '';
+        if (score <= 40) {
+                 result = 'Your stress level is low.';
+                document.getElementById('result').classList.add('low');
+             } else if (score <= 80) {
+                result = `Your stress level is medium. ${score}`;
+                document.getElementById('result').classList.add('medium');
+             } else {
+                 result = 'Your stress level is high.';
+                 document.getElementById('result').classList.add('high');
+                 document.getElementById('popup').style.display = 'block'; // Show the popup
+             }
+         document.getElementById('result').innerHTML = result;
+          document.getElementById('result').style.display = 'block';
+         }
+    
+
+//     function calculatePSQ() {
+//     // Initialize total score
+//     let totalScore = 0;
+
+//     // Get the names of the positive items
+//     const positiveItems = ['q1', 'q7', 'q10', 'q13', 'q17', 'q21', 'q25', 'q29'];
+
+//     // Iterate over positive items
+//     positiveItems.forEach(itemName => {
+//         // Find all checked radio buttons
+//         const answers = document.querySelectorAll(`input[name="${itemName}"]:checked`);
+        
+//         // Filter the checked radio buttons for the current item
+//         const radio = Array.from(answers).find(answer => answer.getAttribute('name') === itemName);
+        
+//         if (radio) {
+//             // Parse the value of the checked radio button and add it to the total score
+//             const value = parseInt(radio.value);
+//             totalScore += value;
+//         } else {
+//             console.log(`No radio button selected for question ${itemName}`);
+//         }
+//     });
+
+//     // Calculate the PSQ index
+//     const rawScore = totalScore;
+//     const psqIndex = (rawScore - 30) / 90;
+
+//     // Display the PSQ index
+//     document.getElementById('result').innerHTML = `Your PSQ index is: ${psqIndex.toFixed(2)}`;
+
+//     // Determine stress level
+//     let stressLevel = '';
+//     if (psqIndex < 0.33) {
+//         stressLevel = 'Low Stress';
+//     } else if (psqIndex >= 0.33 && psqIndex < 0.66) {
+//         stressLevel = 'Moderate Stress';
+//     } else {
+//         stressLevel = 'High Stress';
+//     }
+
+//     // Display stress level message
+//     document.getElementById('stress-level').innerHTML = `Your stress level is: ${stressLevel}`;
+//     document.getElementById('popup').style.display = 'block'; // Show the popup
+// }
+
+//     function calculatePSQ() {
+//     // Initialize total score
+//     let totalScore = 0;
+
+//     // Get the names of the positive items
+//     const positiveItems = ['q1', 'q7', 'q10', 'q13', 'q17', 'q21', 'q25', 'q29'];
+
+//     // Iterate over positive items
+//     positiveItems.forEach(itemName => {
+//         // Find the checked radio button for the current item
+//         const radio = document.querySelector(`input[name="${itemName}"]:checked`);
+//         if (radio) {
+//             // Parse the value of the checked radio button and add it to the total score
+//             const value = parseInt(radio.value);
+//             console.log(`Question ${itemName} value: ${value}`);
+//             totalScore += value;
+//         } else {
+//             console.log(`No radio button selected for question ${itemName}`);
+//         }
+//     });
+
+//     // Calculate the PSQ index
+//     const rawScore = totalScore;
+//     const psqIndex = (rawScore - 30) / 90;
+
+//     // Display the PSQ index
+//     document.getElementById('result').innerHTML = `Your PSQ index is: ${psqIndex.toFixed(2)}`;
+
+//     // Determine stress level
+//     let stressLevel = '';
+//     if (psqIndex < 0.33) {
+//         stressLevel = 'Low Stress';
+//     } else if (psqIndex >= 0.33 && psqIndex < 0.66) {
+//         stressLevel = 'Moderate Stress';
+//     } else {
+//         stressLevel = 'High Stress';
+//     }
+
+//     // Display stress level message
+//     document.getElementById('stress-level').innerHTML = `Your stress level is: ${stressLevel}`;
+//     document.getElementById('popup').style.display = 'block'; // Show the popup
+// }
+
+
+
+//     function calculatePSQ() {
+//     // Initialize total score
+//     let totalScore = 0;
+
+//     // Get the scores for positive items and tally them
+//     const positiveItems = [1, 7, 10, 13, 17, 21, 25, 29];
+
+
+//     positiveItems.forEach(item => {
+//     const radio = document.querySelector(`input[name="q${item}"]:checked`);
+//     if (radio) {
+//         const value = parseInt(radio.value);
+//         console.log(`Question ${item} value: ${value}`);
+//         totalScore += value;
+//     } else {
+//         console.log(`No radio button selected for question ${item}`);
+//     }
+// });
+
+
+//     // Calculate the PSQ index
+//     const rawScore = totalScore;
+//     const psqIndex = (rawScore - 30) / 90;
+
+//     // Display the PSQ index
+//     document.getElementById('result').innerHTML = `Your PSQ index is: ${psqIndex.toFixed(2)}`;
+
+//     // Determine stress level
+//     let stressLevel = '';
+//     if (psqIndex < 0.33) {
+//         stressLevel = 'Low Stress';
+//     } else if (psqIndex >= 0.33 && psqIndex < 0.66) {
+//         stressLevel = 'Moderate Stress';
+//     } else {
+//         stressLevel = 'High Stress';
+//     }
+
+//     // Display stress level message
+//     document.getElementById('stress-level').innerHTML = `Your stress level is: ${stressLevel}`;
+//     document.getElementById('popup').style.display = 'block'; // Show the popup
+// }
+//     // document.getElementById('stressLevel').innerHTML = result;
+//     // document.getElementById('result').style.display = 'block';
+// }
+
+
+// function calculatePSQ() {
+//     // Get the selected values from the form
+//     let total = 0;
+//     let count = 0;
+//     const questions = document.querySelectorAll('input[type="radio"]:checked');
+//     questions.forEach((question) => {
+//         total += parseInt(question.value);
+//         count++;
+//     });
+
+//     // Calculate the raw score
+//     const rawScore = total / count;
+
+//     // Calculate the PSQ index
+//     const psqIndex = (rawScore - 30) / 90;
+
+//     // Display the PSQ index
+//     document.getElementById('psqIndex').innerText = psqIndex.toFixed(2);
+
+//     // Display the stress level
+//     let stressLevel = "";
+//     if (psqIndex < 0.25) {
+//         stressLevel = "Low";
+//     } else if (psqIndex < 0.50) {
+//         stressLevel = "Moderate";
+//     } else if (psqIndex < 0.75) {
+//         stressLevel = "High";
+//     } else {
+//         stressLevel = "Very High";
+//     }
+//     document.getElementById('stressLevel').innerText = stressLevel;
+// }
+
+//     function calculateScore() {
+//     let score = 0;
+//     const positiveQuestions = [1, 7, 10, 13, 17, 21, 25, 29];
+//     const answers = document.querySelectorAll('input[type="radio"]:checked');
+
+//     answers.forEach((answer, index) => {
+//         if (positiveQuestions.includes(index + 1)) {
+//             score += parseInt(answer.value);
+//         } else {
+//             score += 4 - parseInt(answer.value);
+//         }
+//     });
+
+//     const psqIndex = (score - 30) / 90;
+//     let result = '';
+
+//     if (psqIndex <= 0.33) {
+//         result = 'Your stress level is low.';
+//         document.getElementById('result').classList.add('low');
+//     } else if (psqIndex <= 0.66) {
+//         result = 'Your stress level is medium.';
+//         document.getElementById('result').classList.add('medium');
+//     } else {
+//         result = 'Your stress level is high.';
+//         document.getElementById('result').classList.add('high');
+//         document.getElementById('popup').style.display = 'block'; // Show the popup
+//     }
+
+//     document.getElementById('result').innerHTML = result;
+//     document.getElementById('result').style.display = 'block';
+// }
+
+
+    // function nextQuestion() {
+    //     const questions = document.querySelectorAll('.question');
+    //     questions[currentQuestion].classList.remove('active');
+    //     currentQuestion++;
+    //     if (currentQuestion < questions.length - 1) {
+    //         questions[currentQuestion].classList.add('active');
+    //     } else if (currentQuestion === questions.length - 1) {
+    //         questions[currentQuestion].classList.add('active');
+    //         document.querySelector('.btn-primary').style.display = 'none';
+    //         document.querySelector('.btn-primary:last-of-type').style.display = 'block';
+    //     }
+    // }
+
+
+    // function calculateScore() {
+    //         let score = 0;
+    //         const answers = document.querySelectorAll('input[type="radio"]:checked');
+    //         answers.forEach(answer => {
+    //             score += parseInt(answer.value);
+    //         });
+
+    //         let result = '';
+    //         if (score <= 4) {
+    //             result = 'Your stress level is low.';
+    //             document.getElementById('result').classList.add('low');
+    //         } else if (score <= 8) {
+    //             result = 'Your stress level is medium.';
+    //             document.getElementById('result').classList.add('medium');
+    //         } else {
+    //             result = 'Your stress level is high.';
+    //             document.getElementById('result').classList.add('high');
+    //             document.getElementById('popup').style.display = 'block'; // Show the popup
+    //         }
+
+    //         document.getElementById('result').innerHTML = result;
+    //         document.getElementById('result').style.display = 'block';
+    //     }
+</script>
+
+
+<!-- jquery Min JS -->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<!-- jquery Migrate JS -->
+<script src="{% static 'js/jquery-migrate-3.0.0.js' %}"></script>
+<!-- jquery Ui JS -->
+<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+<!-- Easing JS -->
+<script src="{% static 'js/easing.js' %}"></script>
+<!-- Color JS -->
+<script src="{% static 'js/colors.js' %}"></script>
+<!-- Popper JS -->
+<script src="{% static 'js/popper1.min.js' %}"></script>
+<!-- Bootstrap Datepicker JS -->
+<script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+<!-- Jquery Nav JS -->
+<script src="{% static 'js/jquery.nav.js' %}"></script>
+<!-- Slicknav JS -->
+<script src="{% static 'js/slicknav.min.js' %}"></script>
+<!-- ScrollUp JS -->
+<script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
+<!-- Niceselect JS -->
+<script src="{% static 'js/niceselect.js' %}"></script>
+<!-- Tilt Jquery JS -->
+<script src="{% static 'js/tilt.jquery.min.js' %}"></script>
+<!-- Owl Carousel JS -->
+<script src="{% static 'js/owl-carousel.js' %}"></script>
+<!-- counterup JS -->
+<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+<!-- Steller JS -->
+<script src="{% static 'js/steller.js' %}"></script>
+<!-- Wow JS -->
+<script src="{% static 'js/wow.min.js' %}"></script>
+<!-- Magnific Popup JS -->
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<!-- Counter Up CDN JS -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="{% static 'js/bootstrap1.min.js' %}"></script>
+<!-- Main JS -->
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>

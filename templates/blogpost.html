@@ -1,0 +1,168 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <!-- Meta Tags -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="keywords" content="Site keywords here">
+		<meta name="description" content="">
+		<meta name='copyright' content=''>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<!-- Title -->
+        <title>Mediplus - Free Medical and Doctor Directory HTML Template.</title>
+		{% load static %}
+        {% load tailwind_tags %}
+        
+		<!-- Favicon -->
+        <link rel="icon" href="{% static '/img/favicon.png' %}">
+		
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+
+		<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="{% static 'css/bootstrap1.min.css' %}">
+<!-- Nice Select CSS -->
+<link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+<!-- Font Awesome CSS -->
+<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+<!-- icofont CSS -->
+<link rel="stylesheet" href="{% static 'css/icofont.css' %}">
+<!-- Slicknav -->
+<link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}">
+<!-- Owl Carousel CSS -->
+<link rel="stylesheet" href="{% static 'css/owl-carousel.css' %}">
+<!-- Datepicker CSS -->
+<link rel="stylesheet" href="{% static 'css/datepicker.css' %}">
+<!-- Animate CSS -->
+<link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+<!-- Magnific Popup CSS -->
+<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+<!-- Medipro CSS -->
+<link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hostmind/host@latest/static/index.css">
+    
+    {% tailwind_css %}
+
+		
+    </head>
+    <body>
+        <!-- Preloader -->
+        <div class="preloader">
+            <div class="loader">
+                <div class="loader-outter"></div>
+                <div class="loader-inner"></div>
+
+                <div class="indicator"> 
+                    <svg width="16px" height="12px">
+                        <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                        <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <!-- End Preloader -->
+  {% include 'nav1.html' %}
+
+   
+   
+    {% block content %}
+    <div class='bg-gray-800 text-white p-8 pt-12 flex flex-col md:px-20 lg:px-36 xl:px-60 2xl:px-80'>
+        <span class='text-center text-3xl md:text-4xl font-bold text-cyan-200 hover:text-cyan-300 transition duration-300'><a href='{{blog.slug}}'>{{blog.title}}</a></span>
+        <span class='text-center mt-2 text-gray-400'>by <a href='/about'><i class="bi bi-person"></i> <span class='group'><span class='group-hover:text-cyan-200 bg-left-bottom bg-gradient-to-r from-cyan-300 to-blue-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out'>Ashish</span></span><a> <i class="bi bi-dot"></i> <span><i class="bi bi-calendar4-event"></i> {{blog.time}}</span> <i class="bi bi-dot"></i> <i class="bi bi-tag"></i> <a href='/category/{{blog.category}}'><span class='group'><span class='group-hover:text-cyan-200 bg-left-bottom bg-gradient-to-r from-cyan-300 to-blue-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out'>{{blog.category}}</span></span></span></a>
+        <img class='rounded-lg my-6 flex justify-center' src="{{blog.thumbnail_url}}">
+        <p class=''>{{blog.content|safe}} </p>
+    </div>
+    <style> 
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: revert;
+            font-weight: revert;
+        }
+      
+        {% comment %} ol,
+        ul {
+            list-style: revert;
+            margin: revert;
+            padding: revert;
+        } {% endcomment %}
+        p a {
+            color: #67e8f9;
+            background: 
+              linear-gradient(to right, rgba(103,232,249, 1), rgba(59, 130, 246, 1)),
+              linear-gradient(to right, rgba(34,211,238, 1), rgba(59, 130, 246, 1), rgba(29, 78, 216, 1));
+            background-size: 100% 0.1em, 0 0.1em;
+            background-position: 100% 100%, 0 100%;
+            background-repeat: no-repeat;
+            transition: background-size 400ms;
+        }
+          
+        p a:hover,
+        p a:focus {
+            background-size: 0 0.1em, 100% 0.1em;
+        }
+        p img {
+            border-radius: 8px;
+        }
+    </style>
+    {% endblock %}
+
+    {% include 'footer.html' %}
+    
+
+<!-- jquery Min JS -->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<!-- jquery Migrate JS -->
+<script src="{% static 'js/jquery-migrate-3.0.0.js' %}"></script>
+<!-- jquery Ui JS -->
+<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+<!-- Easing JS -->
+<script src="{% static 'js/easing.js' %}"></script>
+<!-- Color JS -->
+<script src="{% static 'js/colors.js' %}"></script>
+<!-- Popper JS -->
+<script src="{% static 'js/popper1.min.js' %}"></script>
+<!-- Bootstrap Datepicker JS -->
+<script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+<!-- Jquery Nav JS -->
+<script src="{% static 'js/jquery.nav.js' %}"></script>
+<!-- Slicknav JS -->
+<script src="{% static 'js/slicknav.min.js' %}"></script>
+<!-- ScrollUp JS -->
+<script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
+<!-- Niceselect JS -->
+<script src="{% static 'js/niceselect.js' %}"></script>
+<!-- Tilt Jquery JS -->
+<script src="{% static 'js/tilt.jquery.min.js' %}"></script>
+<!-- Owl Carousel JS -->
+<script src="{% static 'js/owl-carousel.js' %}"></script>
+<!-- counterup JS -->
+<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+<!-- Steller JS -->
+<script src="{% static 'js/steller.js' %}"></script>
+<!-- Wow JS -->
+<script src="{% static 'js/wow.min.js' %}"></script>
+<!-- Magnific Popup JS -->
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<!-- Counter Up CDN JS -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="{% static 'js/bootstrap1.min.js' %}"></script>
+<!-- Main JS -->
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>

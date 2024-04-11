@@ -1,0 +1,57 @@
+        {% load static %}
+        <header class="header" >
+    <div class="header-inner">
+        <div class="container">
+            <div class="inner">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <!-- Start Logo -->
+                        <div class="logo">
+                            <a href="{% url 'home' %}"><img src="{% static 'img/mindmate-high-resolution-logo-transparent.png' %}" alt="#"></a>
+                        </div>
+                        <!-- End Logo -->
+                        <!-- Mobile Nav -->
+                        <div class="mobile-nav"></div>
+                        <!-- End Mobile Nav -->
+                    </div>
+                    <div class="col-lg-8 col-md-9 col-12">
+                        <!-- Main Menu -->
+                        <div class="main-menu">
+                            <nav class="navigation">
+                                <ul class="nav menu">
+                                        <li {% if current_page == 'home' %}class="active"{% endif %}><a href="{% url 'home' %}">Home</a></li>
+                                        <li {% if current_page == 'doctor' %}class="active"{% endif %}><a href="#">Doctor</a></li>
+                                        {% if not user.is_authenticated %}
+                                        <li {% if current_page == 'services' %}class="active"{% endif %}><a href="{% url 'services' %}">Services</a></li>
+                                        {% endif %}
+                                        <li {% if current_page == 'blog' %}class="active"{% endif %}><a href="{% url 'blog' %}">Blogs</a></li>
+                                        <li {% if current_page == 'assessment' %}class="active"{% endif %}><a href="{% url 'assessment' %}">Assessment</a></li>
+                                        <li {% if current_page == 'contact' %}class="active"{% endif %}><a href="{% url 'contact' %}">Contact Us</a></li>
+                                        {% if user.is_authenticated and user.is_patient %}
+                                        <li><a href="{% url 'patient-dashboard' %}"style="text-decoration: none;">Patient Dashboard</a></li>
+                                        {% endif %}
+                                    </ul>
+                                    
+                                </ul>
+                            </nav>
+                        </div>
+                        <!--/ End Main Menu -->
+                    </div>
+                    
+                    <div class="col-lg-1 col-12">
+                        {% if user.is_authenticated %}
+                        <div class="get-quote">
+                            <a href="{% url 'logout' %}" class="btn">Log Out</a>
+                        </div>
+                        {% else %}
+                        <div class="get-quote">
+                            <a href="{% url 'login' %}" class="btn">Login/Signup</a>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ End Header Inner -->
+</header>

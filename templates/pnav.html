@@ -1,0 +1,89 @@
+{% load static %}
+<header class="header">
+    <div class="header-inner">
+        <div class="container">
+            <div class="inner">
+                <div class="row align-items-justify" >
+                    <div class="col-lg-2 col-md-5 col-12" style="margin-left: -170px;">
+                        <!-- Start Logo -->
+                        <div class="logo">
+                            <a href="{% url 'home' %}">
+                                <img src="{% static 'img/mindmate-high-resolution-logo-transparent.png' %}" alt="#" style="padding-left: 0px;">
+                            </a>
+                        </div>
+                        <!-- End Logo -->
+                        <!-- Mobile Nav -->
+                        <div class="mobile-nav"></div>
+                        <!-- End Mobile Nav -->
+                    </div>
+                    <div class="col-lg-9 col-md-7 col-12" style="margin-right: 100px; ;">
+                        <div class="main-menu">
+                            <nav class="navigation">
+                                <ul class="nav menu">
+                                    <li {% if current_page == 'home' %}class="active"{% endif %}>
+                                        <a href="{% url 'home' %}">Home</a>
+                                    </li>
+                                    <li {% if current_page == 'doctor' %}class="active"{% endif %}>
+                                        <a href="{% url 'patient-dashboard' %}">Dashboard</a>
+                                    </li>
+                                    <li class="has-submenu">
+                                        <a href="#">Hospital <i class="icofont-rounded-down"></i></a>
+                                        <ul class="dropdown">
+                                            <li><a href="{% url 'multiple-hospital' %}">Hospital Info</a></li>
+                                            <li><a href="{% url 'search' %}">Search Doctor</a></li>
+                                        </ul>
+                                    </li>
+                                    {% if user.is_authenticated and user.is_patient %}
+                                    <li>
+                                        <a href="{% url 'chat-home' pk=user.id %}">Chat with Doctor</a>
+                                    </li>
+                                    {% endif %}
+                                    <li>
+                                        <a href="{% url 'pharmacy_shop' %}">Medical Shop</a>
+                                    </li>
+                                </ul>
+                                
+                            </nav>
+                        </div>
+                        <!--/ End Main Menu -->
+                    </div>
+                    <div class="col-lg-1 col-6" style="position: relative; left: 140px;">
+                        <!-- User Menu -->
+                        <ul class="nav header-navbar-rht">
+                            <li class="nav-item dropdown has-arrow logged-item">
+                                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                                    <span class="user-img">
+                                        <img class="rounded-circle" src="{{patient.featured_image.url}}" width="31"
+                                            alt="Richard Wilson">
+                                    </span>
+                                </a>
+                                <div class="dropdown dropdown-menu-right show">
+                                    <div class="user-header">
+                                        <div class="avatar avatar-sm">
+                                            <img src="{{patient.featured_image.url}}" alt="User Image"
+                                                class="avatar-img rounded-circle">
+                                        </div>
+                                        
+                                        <div class="user-text" style="left: -100px;">
+                                            <h6>{{patient.name}}</h6>
+                                            <p class="text-muted mb-0">Patient</p>
+                                            <ul class="dropdown" style="left: -30px;">
+                                                <li><a href="{% url 'patient-dashboard' %}">Dashboard</a></li>
+                                                <li><a href="{% url 'profile-settings' %}">Profile Settings</a></li>
+                                                <li><a href="{% url 'logout' %}">Logout</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- /User Menu -->
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ End Header Inner -->
+</header>

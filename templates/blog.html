@@ -1,0 +1,181 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <!-- Meta Tags -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="keywords" content="Site keywords here">
+		<meta name="description" content="">
+		<meta name='copyright' content=''>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<!-- Title -->
+        <title>Mindmate Ai Care</title>
+		{% load static %}
+    {% load tailwind_tags %}
+        
+		<!-- Favicon -->
+        <link rel="icon" href="{% static '/img/favicon.png' %}">
+		
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+
+
+
+
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hostmind/host@latest/static/index.css">
+    		<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<!-- Nice Select CSS -->
+<link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+<!-- Font Awesome CSS -->
+<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+<!-- icofont CSS -->
+<link rel="stylesheet" href="{% static 'css/icofont.css' %}">
+<!-- Slicknav -->
+<link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}">
+<!-- Owl Carousel CSS -->
+<link rel="stylesheet" href="{% static 'css/owl-carousel.css' %}">
+<!-- Datepicker CSS -->
+<link rel="stylesheet" href="{% static 'css/datepicker.css' %}">
+<!-- Animate CSS -->
+<link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+<!-- Magnific Popup CSS -->
+<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+<!-- Medipro CSS -->
+<link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    {% tailwind_css %}
+
+		
+    </head>
+    <body>
+        <!-- Preloader -->
+        <div class="preloader">
+            <div class="loader">
+                <div class="loader-outter"></div>
+                <div class="loader-inner"></div>
+
+                <div class="indicator"> 
+                    <svg width="16px" height="12px">
+                        <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                        <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <!-- End Preloader -->
+       {% include 'nav1.html' %}
+
+
+{% block content %}
+{% comment %} {% for blog in blogs %}
+    {{blog.title}}
+    <img src="{{blog.thumbnail_img.url}}">
+{% endfor %} {% endcomment %}
+{% comment %} <div class="container mx-auto p-5 bg-gray-800 text-white">
+    <div class="grid grid-cols-1 md:grid-cols-2 bg-gray-900 p-5">
+      <div class="flex justify-center">
+        <img class="rounded-lg max-w-80 md:max-w-sm h-auto" src="{% static 'images/password-generator.png' %}" alt="image">
+      </div>
+      <div class="flex justify-center">
+        <p>Text</p>
+      </div>
+    </div>
+  </div> {% endcomment %}
+  {% comment %} <div class='md:p-20 lg:p-40 bg-gray-800'>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-5">
+        <div class="bg-green-100 text-green-500 text-lg font-bold text-center p-14 rounded-lg">1</div>
+        <div class="bg-green-100 text-green-500 text-lg font-bold text-center p-14 rounded-lg">2</div>
+    </div>
+</div> {% endcomment %}
+
+<div class='bg-gray-800 text-white p-5 md:py-8 md:px-20 lg:px-40 xl:px-60'>
+    <p style="font-family: Poppins-Bold" class='text-4xl font-extrabold py-5 text-center md:text-start'>Blog</p>
+    {% for blog in blogs %}
+        <div style="box-shadow:0 5px 30px 0 rgba(0,0,0,.05);" class='flex flex-col md:flex-row gap-4 md:gap-x-8 bg-gray-900 p-5 mb-4 rounded-lg'>
+            <img class="post-img-url rounded-lg object-cover" width='350px' height='180px' src="{{blog.thumbnail_url}}" alt="image">
+            <div>
+                <a class='text-blue-100 hover:text-blue-300 transition duration-300' href='/blogpost/{{blog.slug}}'><span class='text-xl font-extrabold'>{{blog.title|slice:80}}</span></a><br>
+                <p class='my-3'>{{blog.meta|slice:180|safe}}</p>
+                <p class='mt-2 mb-4 text-gray-400'>by  <i class="bi bi-person"></i>  <a href='/about' class='group transition-all duration-500 ease-out'><span class='bg-left-bottom bg-gradient-to-r from-cyan-300 to-blue-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out group-hover:text-cyan-200'> {{ blog.user.username }}</span></a> <i class="bi bi-dot"></i> <span><i class="bi bi-calendar4-event"></i> {{blog.time}}</span> <i class="bi bi-dot"></i><i class="bi bi-tag"></i> <a href='/category/{{blog.category}}' class='group transition-all duration-500 ease-out'><span class='bg-left-bottom bg-gradient-to-r from-cyan-300 to-blue-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out group-hover:text-cyan-200'>{{blog.category}}</span></a></p>
+                {% comment %} <a class='text-sm bg-gray-700 py-1 px-3 rounded-full' href='/category/{{blog.category}}'><i class="bi bi-tag"></i> {{blog.category}}</a><br><br> {% endcomment %}
+                <a href='/blogpost/{{blog.slug}}'><button class='btn'>Read more <i class="bi bi-arrow-right font-extrabold"></i></button></a>
+            </div>
+        </div>
+    {% endfor %}
+    <div class="pagination py-8">
+      <span class="page-links">
+        {% if blogs.has_previous %}
+        <div class='float-left'>
+          <a class='bg-blue-600 p-2 px-4 rounded-[6px] hover:bg-gray-800 hover:outline hover:outline-blue-600 transition delay-75 ease-in-out my-3' href="?page={{ blogs.previous_page_number }}"><i class="bi bi-arrow-left font-extrabold"></i> Previous</a>
+        </div>
+        {% endif %}
+    
+        {% comment %} <span class="page-current">
+            Page {{ blogs.number }} of {{ blogs.paginator.num_pages }}
+        </span> {% endcomment %}
+    
+        {% if blogs.has_next %}
+        <div class='float-right'>
+          <a class='bg-blue-600 p-2 px-4 rounded-[6px] hover:bg-gray-800 hover:outline hover:outline-blue-600 transition delay-75 ease-in-out my-3' href="?page={{ blogs.next_page_number }}">Next <i class="bi bi-arrow-right font-extrabold"></i></a>
+        </div>
+        {% endif %}
+      </span>
+    </div>
+  </div>
+{% endblock %}
+
+{% include 'footer.html' %}
+
+<!-- jquery Min JS -->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<!-- jquery Migrate JS -->
+<script src="{% static 'js/jquery-migrate-3.0.0.js' %}"></script>
+<!-- jquery Ui JS -->
+<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+<!-- Easing JS -->
+<script src="{% static 'js/easing.js' %}"></script>
+<!-- Color JS -->
+<script src="{% static 'js/colors.js' %}"></script>
+<!-- Popper JS -->
+<script src="{% static 'js/popper1.min.js' %}"></script>
+<!-- Bootstrap Datepicker JS -->
+<script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+<!-- Jquery Nav JS -->
+<script src="{% static 'js/jquery.nav.js' %}"></script>
+<!-- Slicknav JS -->
+<script src="{% static 'js/slicknav.min.js' %}"></script>
+<!-- ScrollUp JS -->
+<script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
+<!-- Niceselect JS -->
+<script src="{% static 'js/niceselect.js' %}"></script>
+<!-- Tilt Jquery JS -->
+<script src="{% static 'js/tilt.jquery.min.js' %}"></script>
+<!-- Owl Carousel JS -->
+<script src="{% static 'js/owl-carousel.js' %}"></script>
+<!-- counterup JS -->
+<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+<!-- Steller JS -->
+<script src="{% static 'js/steller.js' %}"></script>
+<!-- Wow JS -->
+<script src="{% static 'js/wow.min.js' %}"></script>
+<!-- Magnific Popup JS -->
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<!-- Counter Up CDN JS -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="{% static 'js/bootstrap1.min.js' %}"></script>
+<!-- Main JS -->
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>

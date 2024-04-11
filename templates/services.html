@@ -1,0 +1,179 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <!-- Meta Tags -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="keywords" content="Site keywords here">
+		<meta name="description" content="">
+		<meta name='copyright' content=''>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<!-- Title -->
+        <title>MindMate</title>
+        {% load static %}
+        
+		<!-- Favicon -->
+        <link rel="icon" href="{% static '/img/favicon.png' %}">
+		
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+
+		<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="{% static 'css/bootstrap1.min.css' %}">
+<!-- Nice Select CSS -->
+<link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+<!-- Font Awesome CSS -->
+<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+<!-- icofont CSS -->
+<link rel="stylesheet" href="{% static 'css/icofont.css' %}">
+<!-- Slicknav -->
+<link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}">
+<!-- Owl Carousel CSS -->
+<link rel="stylesheet" href="{% static 'css/owl-carousel.css' %}">
+<!-- Datepicker CSS -->
+<link rel="stylesheet" href="{% static 'css/datepicker.css' %}">
+<!-- Animate CSS -->
+<link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+<!-- Magnific Popup CSS -->
+<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+<!-- Medipro CSS -->
+<link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+    </head>
+    <body>
+        <!-- Preloader -->
+        <div class="preloader">
+            <div class="loader">
+                <div class="loader-outter"></div>
+                <div class="loader-inner"></div>
+
+                <div class="indicator"> 
+                    <svg width="16px" height="12px">
+                        <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                        <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <!-- End Preloader -->
+                <!-- End Preloader -->
+                {% include 'nav1.html' %}
+	<!-- Start service -->
+    <section class="services section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>We Offer Different Services To Improve Your Health</h2>
+                        <img src="{%static 'img/section-img.png'%}" alt="#">
+                        <p>MindMate is a mental health and wellness platform that offers various services to support mental well-being</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- Start Single Service -->
+                    <div class="single-service">
+                        <i class="icofont icofont-prescription"></i>
+                        <h4><a href="{% url 'services' %}">Mental Health Assessments</a></h4>
+                        <p style="text-align: justify;">MindMate provides mental health assessments to help users understand their mental health status. These assessments often include questionnaires and tests that evaluate symptoms of common mental health conditions such as depression, anxiety, and stress. Users can receive personalized recommendations based on their assessment results. </p>	
+                    </div>
+                    <!-- End Single Service -->
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- Start Single Service -->
+                    <div class="single-service">
+                        <i class="icofont-user-alt-3"></i>
+                        <h4><a href="{% url 'services' %}">Therapy Matching</a></h4>
+                        <p style="text-align: justify;">MindMate offers a therapy matching service that helps users find a therapist or counselor who meets their specific needs. Users can input their preferences, such as therapy type (e.g., cognitive-behavioral therapy, psychotherapy), therapist gender, and location, to receive recommendations for therapists who match their criteria. </p>	
+                    </div>
+                    <!-- End Single Service -->
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- Start Single Service -->
+                    <div class="single-service">
+                        <i class="icofont icofont-doctor-alt"></i>
+                        <h4><a href="{% url 'services' %}">Therapist Chat</a></h4>
+                        <p style="text-align: justify;">MindMate provides a therapist chat service that allows users to chat with licensed therapists and counselors. Users can ask questions, seek advice, and receive support from trained professionals in a secure and confidential environment. This service can be particularly beneficial for individuals who prefer text-based communication or need immediate support. </p>	
+                    </div>
+                    <!-- End Single Service -->
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- Start Single Service -->
+                    <div class="single-service">
+                        <i class="icofont icofont-medicine"></i>
+                        <h4><a href="{% url 'services' %}">Pharmacy</a></h4>
+                        <p style="text-align: justify;">Pharmacies play a crucial role in healthcare by providing access to medications and other healthcare products. These establishments are staffed by trained pharmacists who ensure that medications are dispensed safely and accurately. Pharmacists also offer valuable guidance on medication use, potential side effects, and interactions with other drugs. Additionally, pharmacies often provide services such as medication therapy management, immunizations, and health screenings. Pharmacies serve as a vital link between healthcare providers and patients, helping to ensure that individuals receive the medications and support they need to manage their health conditions effectively. </p>	
+                    </div>
+                    <!-- End Single Service -->
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- Start Single Service -->
+                    <div class="single-service">
+                        <i class="icofont icofont-brainstorming"></i>
+                        <h4><a href="{% url 'services' %}">Eva Chat</a></h4>
+                        <p style="text-align: justify;">Eva is a chatbot designed to provide personalized and interactive assistance to users. Eva uses artificial intelligence to understand user queries and provide relevant responses. It can help with a variety of tasks, such as answering questions, providing information, and even assisting with tasks like setting reminders or scheduling appointments. Eva is designed to be user-friendly and efficient, offering a seamless chat experience for users seeking assistance. </p>	
+                    </div>
+                    <!-- End Single Service -->
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- Start Single Service -->
+                    <div class="single-service">
+                        <i class="icofont icofont-blogger"></i>
+                        <h4><a href="{% url 'services' %}">Mind Care blogs</a></h4>
+                        <p style="text-align: justify;">A mental health blog provides a platform for discussing and exploring various aspects of mental well-being, offering valuable insights, resources, and support to its readers. Through personal stories, expert advice, and informative articles, these blogs aim to raise awareness, reduce stigma, and empower individuals to take proactive steps towards better mental health. Topics often include self-care practices, coping strategies, mental health disorders, and the importance of seeking professional help when needed. By fostering a supportive and informative environment, mental health blogs play a crucial role in promoting mental wellness and helping individuals navigate their mental health journey with confidence and resilience. </p>	
+                    </div>
+                    <!-- End Single Service -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/ End service -->
+    {% include 'footer.html' %}
+		
+<!-- jquery Min JS -->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<!-- jquery Migrate JS -->
+<script src="{% static 'js/jquery-migrate-3.0.0.js' %}"></script>
+<!-- jquery Ui JS -->
+<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+<!-- Easing JS -->
+<script src="{% static 'js/easing.js' %}"></script>
+<!-- Color JS -->
+<script src="{% static 'js/colors.js' %}"></script>
+<!-- Popper JS -->
+<script src="{% static 'js/popper1.min.js' %}"></script>
+<!-- Bootstrap Datepicker JS -->
+<script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+<!-- Jquery Nav JS -->
+<script src="{% static 'js/jquery.nav.js' %}"></script>
+<!-- Slicknav JS -->
+<script src="{% static 'js/slicknav.min.js' %}"></script>
+<!-- ScrollUp JS -->
+<script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
+<!-- Niceselect JS -->
+<script src="{% static 'js/niceselect.js' %}"></script>
+<!-- Tilt Jquery JS -->
+<script src="{% static 'js/tilt.jquery.min.js' %}"></script>
+<!-- Owl Carousel JS -->
+<script src="{% static 'js/owl-carousel.js' %}"></script>
+<!-- counterup JS -->
+<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+<!-- Steller JS -->
+<script src="{% static 'js/steller.js' %}"></script>
+<!-- Wow JS -->
+<script src="{% static 'js/wow.min.js' %}"></script>
+<!-- Magnific Popup JS -->
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<!-- Counter Up CDN JS -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="{% static 'js/bootstrap1.min.js' %}"></script>
+<!-- Main JS -->
+<script src="{% static 'js/main.js' %}"></script>
+    </body>
+</html>

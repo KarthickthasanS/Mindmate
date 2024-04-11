@@ -1,0 +1,235 @@
+{% load static %}
+<!DOCTYPE html> 
+<html lang="en">
+	
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<title>HealthStack</title>
+	
+	<!-- Favicons -->
+	<link type="image/x-icon" href="{% static 'HealthStack-System/images/Normal/favicon.png' %}" rel="icon">
+	
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="{% static 'HealthStack-System/css/Normal/bootstrap.min.css' %}">
+	
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="{% static 'HealthStack-System/plugins/Normal/fontawesome/css/fontawesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'HealthStack-System/plugins/Normal/fontawesome/css/all.min.css' %}">
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="{% static 'HealthStack-System/css/Normal/style.css' %}">
+		
+	<link rel="stylesheet"href="{% static 'HealthStack-System/css/Normal/hospital.css' %}">
+	<link rel="stylesheet"href="{% static 'HealthStack-System/css/Normal/search2.css' %}">
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+			<script src="assets/js/html5shiv.min.js"></script>
+			<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+		<!-- Favicon -->
+		<link rel="icon" href="{% static '/img/favicon.png' %}">
+		
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+
+		<style>
+			.btn {
+		color: #fff;
+		padding: 13px 25px;
+		font-size: 14px;
+		text-transform: capitalize;
+		font-weight: 500;
+		background: #1A76D1;
+		position: relative;
+		box-shadow: none;
+		display: inline-block;
+		-webkit-transition: all 0.4s ease;
+		-moz-transition: all 0.4s ease;
+		transition: all 0.4s ease;
+		-webkit-transform: perspective(1px) translateZ(0);
+		transform: perspective(1px) translateZ(0);
+		border: none;
+		border-radius: 0;
+		border-radius:4px;
+	}
+	.btn:hover{
+		color:#fff;
+	}
+	.btn:before{
+		content: "";
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: #2C2D3F;
+		-webkit-transform: scaleX(0);
+		transform: scaleX(0);
+		-webkit-transform-origin: 50%;
+		transform-origin: 50%;
+		-webkit-transition:all 0.4s ease;
+		-moz-transition:all 0.4s ease;
+		transition:all 0.4s ease;
+		border-radius:4px;
+	}
+	.btn:hover:before{
+		-webkit-transform: scaleX(1);
+		transform: scaleX(1);
+	}
+	</style>
+	
+	</head>
+	<body>
+
+		<!-- Main Wrapper -->
+		<div class="main-wrapper">
+		
+			<!-- Header -->
+			<header class="header">
+
+				{% if user.is_authenticated and user.is_patient %}
+				{% include 'patient_navbar.html' %}
+				{% endif %}
+				
+				{% if user.is_authenticated and user.is_doctor %}
+				{% include 'doctor-navbar.html' %}
+				{% endif %}
+
+			</header>
+			<!-- /Header -->
+			
+			<!-- Breadcrumb -->
+			<div class="breadcrumb-bar">
+				<div class="container-fluid">
+					<div class="row align-items-center">
+						<div class="col-md-6 col-6">
+							<nav aria-label="breadcrumb" class="page-breadcrumb">
+								<ol class="breadcrumb">
+									{% if user.is_authenticated and user.is_patient %}
+									<li class="breadcrumb-item"><a href="{% url 'patient-dashboard' %}">Home</a></li>
+									{% endif %}
+
+									{% if user.is_authenticated and user.is_doctor %}
+									<li class="breadcrumb-item"><a href="{% url 'doctor-dashboard' %}">Home</a></li>
+									{% endif %}
+									<li class="breadcrumb-item active" aria-current="page">Hospitals</li>
+								</ol>
+							</nav>
+							<h2 class="breadcrumb-title">Hospitals</h2>
+						</div>
+						<div class="col-md-6 col-6 text-right">
+							
+							<div class="top-nav-search">
+								<form action="{% url 'multiple-hospital' %}" method="GET">
+									<input type="text" class="form-control" placeholder="Search hospital" name="search_query" value="{{search_query}}">
+									<button class="btn" type="submit"><i class="fa fa-search"></i></button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Breadcrumb -->
+			
+			<!-- Page Content -->
+			<div class="content">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
+						
+							<!-- Profile Sidebar -->
+							<div>
+								
+								{% if user.is_authenticated and user.is_patient %}
+								{% include 'patient-sidebar.html' %}
+								{% endif %}
+				
+								{% if user.is_authenticated and user.is_doctor %}
+								{% include 'doctor-sidebar.html' %}
+								{% endif %}
+							
+							
+							</div>
+							<!-- /Profile Sidebar -->
+							
+						</div>
+						
+						<div class="col-md-7 col-lg-8 col-xl-9">
+							<section class="wrapper" style="height: 0px;">
+								<div class="container-fostrap" style="padding-top: 0px;">
+									<h1 class="card-title" style="text-align: center;font-size: 45px;">All Hospitals</h1>
+									<hr>	
+
+									<div class="content">
+										<div class="container">
+											<div class="row">
+												{% for hospital in hospitals %}
+
+												<div class="col-xs-12 col-sm-4">
+													<div class="card">
+														<a class="img-card" href="#">
+														<img src="{{hospital.featured_image.url}}" />
+													  </a>
+														<div class="card-content">
+															<h4 class="card-title">
+																<a href="#"> {{hospital.name}}
+															  </a>
+															</h4>   
+														</div>
+														<div class="card-read-more">
+															<a href="{% url 'hospital-profile' pk=hospital.hospital_id %}" class="btn btn-link btn-block">
+																Explore
+															</a>
+														</div>
+													</div>
+												</div>
+												{% endfor %}
+
+												
+											</div>
+										</div>
+										
+									</div>
+								</div>
+								
+							</section>
+							{% include 'pagination.html' with queryset=hospitals custom_range=custom_range %}
+						</div>
+						
+					</div>
+				</div>
+				
+			</div>		
+			<!-- /Page Content -->
+
+			
+   
+			
+		   
+		</div>
+		<!-- /Main Wrapper -->
+	  
+		<!-- jQuery -->
+		<script src="{% static 'HealthStack-System/js/Normal/jquery.min.js' %}"></script>
+		
+		<!-- Bootstrap Core JS -->
+		<script src="{% static 'HealthStack-System/js/Normal/popper.min.js' %}"></script>
+		<script src="{% static 'HealthStack-System/js/Normal/bootstrap.min.js' %}"></script>
+		
+		<!-- Sticky Sidebar JS -->
+        <script src="{% static 'HealthStack-System/plugins/Normal/theia-sticky-sidebar/ResizeSensor.js' %}"></script>
+        <script src="{% static 'HealthStack-System/plugins/Normal/theia-sticky-sidebar/theia-sticky-sidebar.js' %}"></script>
+		
+		<!-- Custom JS -->
+		<script src="{% static 'HealthStack-System/Outside_assets/js/script.js' %}"></script>
+
+		<!-- Searchbar JS -->
+		<script src="{% static 'HealthStack-System/js/Normal/sidebar.js' %}"></script>
+		
+	</body>
+
+<!-- doccure/change-password.html  30 Nov 2019 04:12:18 GMT -->
+</html>
